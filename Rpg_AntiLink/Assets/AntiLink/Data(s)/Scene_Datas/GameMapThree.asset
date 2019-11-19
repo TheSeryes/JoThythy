@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195d2e0bdaab5ee44b17cb81fadbf539, type: 3}
+  m_Name: GameMapThree
+  m_EditorClassIdentifier: 
+  m_SceneObj: {fileID: 102900000, guid: e49523be2b712114b899ba624b153b45, type: 3}
+  m_SceneMusic: {fileID: 0}
+  m_MusicOption: 2
+  m_ScenePool: {fileID: 0}
+  m_PoolOption: 2

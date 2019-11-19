@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cdfe848be6c8cd4387cb80b381edcbd, type: 3}
+  m_Name: EnemyBoss
+  m_EditorClassIdentifier: 
+  m_NextWayPointDistance: 3
+  m_Speed: 110
+  m_RotationSpeed: 5
+  m_Target: {fileID: 8168617579004924892, guid: 8ec6360f82708034dbc75a3a60aeddba,
+    type: 3}
+  m_MaxHp: 40
+  m_Armor: 10
+  m_AttackDamage: 15
+  m_AudioSFX: {fileID: 8300000, guid: a29bb8c7cd78cd043aa8620d86640c18, type: 3}
