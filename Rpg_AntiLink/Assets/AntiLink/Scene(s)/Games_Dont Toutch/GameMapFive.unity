@@ -568,6 +568,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5512582795765621967, guid: 0000a83df7ebb8748b3c58b5e9ecbb9f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518338402452241646, guid: 0000a83df7ebb8748b3c58b5e9ecbb9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.27
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0000a83df7ebb8748b3c58b5e9ecbb9f, type: 3}
 --- !u!1001 &1183960555846985769
@@ -582,6 +592,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 2266999148540915217, guid: ffe90adbdc76e5b418d4abd97ff7689b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 214819990347478085, guid: ffe90adbdc76e5b418d4abd97ff7689b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -590,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 214819990347478085, guid: ffe90adbdc76e5b418d4abd97ff7689b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.53
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 214819990347478085, guid: ffe90adbdc76e5b418d4abd97ff7689b,
         type: 3}
@@ -636,6 +651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200968324817293119, guid: ffe90adbdc76e5b418d4abd97ff7689b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1598417340031132221, guid: ffe90adbdc76e5b418d4abd97ff7689b,
         type: 3}

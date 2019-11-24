@@ -131,4 +131,16 @@ public class PhaseBoss : EnemyBase
         }
     }
     #endregion
+
+
+    private void OnCollisionEnter2D(Collision2D aCol)
+    {
+        Debug.Log("EnterPlayer" + aCol.gameObject.name);
+        PlayerController refPlayer = aCol.gameObject.GetComponent<PlayerController>();
+        
+        if(refPlayer != null)
+        {
+            refPlayer.ReceiveDamage(m_AttackDamage);
+        }
+    }
 }

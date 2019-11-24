@@ -161,7 +161,11 @@ public class PlayerController : MonoBehaviour
 
     public void ReceiveDamage(int aDamage)
     {
-        
+        m_CurrentHealth -= aDamage;
+        if (m_CurrentHealth <= 0)
+        {    
+            Death();
+        }    
     }
 
     public void ReceiveHealt(int aHealth)
@@ -174,6 +178,10 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log("Reveice Heal : " + m_CurrentHealth);
     }
-
     #endregion
+
+    private void Death()
+    {
+        Destroy(gameObject);
+    }
 }
