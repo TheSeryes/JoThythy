@@ -45,11 +45,16 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D aCol)
     {
         EnemyAI eRef = aCol.gameObject.GetComponent<EnemyAI>();
-
         if(eRef != null)
         {
             eRef.ReceiveDamage(m_Damage);
-            Debug.Log("Dmage Arrwo" + m_Damage);
+        }
+
+        PhaseBoss refBoss = aCol.gameObject.GetComponent<PhaseBoss>();
+        if(refBoss != null)
+        {
+            refBoss.BossReceiveDamage(m_Damage);
+            Debug.Log("Boss ReceiveDamage Arrow : " + m_Damage);
         }
     }
 }

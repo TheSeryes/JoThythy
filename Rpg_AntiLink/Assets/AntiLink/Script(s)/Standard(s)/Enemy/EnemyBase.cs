@@ -26,7 +26,6 @@ public class EnemyBase : MonoBehaviour
         SetupData();
     }
 
-    
 
     virtual public void DealDamage(int aDamage)
     {
