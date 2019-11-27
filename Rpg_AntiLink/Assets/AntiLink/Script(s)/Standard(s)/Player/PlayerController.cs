@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum eAttackMode { Ranged, Melee };
 
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
 {
 
     #region Variable(s)
+    [SerializeField]
+    private Canvas m_Inventory;
 
     [Header("Component(s)")]
     [SerializeField]
@@ -99,7 +102,19 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        InputInventory();
     }
+
+    private void InputInventory()
+    {
+        if(Input.GetButtonDown("Inventory"))
+        {
+            Debug.Log("Press i");
+            m_Inventory.enabled = true;
+        }
+    }
+
     /// <summary>
     /// Initialize our variables to the data.
     /// </summary>
@@ -145,6 +160,8 @@ public class PlayerController : MonoBehaviour
 
         m_VisualController.UpdateDir(m_MoveDirection);
     }
+
+
 
     ///<summary> Call a raycast in the player direction to check if there's an ennemi in front of him and hit him if yes </summary>
     private void MeleeAttack()
