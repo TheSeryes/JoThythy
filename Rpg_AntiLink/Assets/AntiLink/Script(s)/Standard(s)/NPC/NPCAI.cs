@@ -11,15 +11,16 @@ public class NPCAI : MonoBehaviour
     [SerializeField]
     private Canvas m_Canvas;
     [SerializeField]
+    private GameObject m_ImageText;
+    [SerializeField]
     private float m_Speed = 0f;
     [SerializeField]
     private float m_StartWaitTime = 0f;
  
-    
+  
     private int m_RandomSpot = 0;
     private float m_WaitTime = 0f;
     private float m_SpeedBegin;
-
     private bool m_PlayerContact = true;  
 
     private void Start()
@@ -60,12 +61,11 @@ public class NPCAI : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D aCol)
     {
         PlayerController refPlayer = aCol.gameObject.GetComponent<PlayerController>();
-        Debug.Log("Player Trigger");
+
         if(refPlayer != null)
         {
             m_Canvas.enabled = true;
-            m_PlayerContact = false;
-           
+            m_PlayerContact = false;         
         }
     }
 
@@ -80,10 +80,10 @@ public class NPCAI : MonoBehaviour
             m_Speed = m_SpeedBegin;
             m_PlayerContact = true;
         }
+    }  
+
+    public void ShowDialogue()
+    {
+        m_ImageText.SetActive(true);
     }
-
-
-
-
-   
 }

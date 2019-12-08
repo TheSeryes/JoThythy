@@ -6,6 +6,8 @@ public class PhaseBoss : EnemyBase
 {
     [SerializeField]
     private Rigidbody2D m_Rb;
+    [SerializeField]
+    private UI m_UI;
 
     private int m_CountRage = 0;
     private int m_CountTeleport = 0;
@@ -13,10 +15,13 @@ public class PhaseBoss : EnemyBase
 
     private float m_TimeModeRage = 10f;
     private bool m_CanRage = false;
+    private int m_CurrentHp;
 
     private void Start()
     {
         m_Target = GameManager.Instance.GetPlayerPosition();
+
+        m_CurrentHp = m_MaxHp;
     }
 
     private void Update()
@@ -44,9 +49,10 @@ public class PhaseBoss : EnemyBase
 
     public void BossReceiveDamage(int aDamage)
     {
-        m_MaxHp -= aDamage;
+        m_CurrentHp -= aDamage;
+        m_UI.UpdateHp((float)m_CurrentHp/(float)m_MaxHp);
 
-        if (m_MaxHp < 0)
+        if (m_CurrentHp < 0)
         {
             Death();
         }

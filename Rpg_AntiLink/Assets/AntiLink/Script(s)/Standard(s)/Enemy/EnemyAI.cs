@@ -9,12 +9,15 @@ public class EnemyAI : EnemyBase
    
     [SerializeField]
     private Transform m_EnemyGFX;
+    [SerializeField]
+    private UI m_UI;
 
     private int m_CurrentWayPoint = 0;
     private bool m_ReachedEndOfPath = false;
     private Path m_Path;
     private Seeker m_Seeker;
     private Rigidbody2D m_Rb;
+    private int m_CurrentHP;
 
   
 
@@ -26,6 +29,8 @@ public class EnemyAI : EnemyBase
         m_Rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+
+        m_CurrentHP = m_MaxHp;
     }
 
     private void UpdatePath()
@@ -87,8 +92,10 @@ public class EnemyAI : EnemyBase
 
     public void ReceiveDamage(int aDamage)
     {
-        m_MaxHp -= aDamage;
-        if (m_MaxHp <= 0)
+        m_CurrentHP -= aDamage;
+        m_UI.UpdateHp((float)m_CurrentHP/(float)m_MaxHp);
+
+        if (m_CurrentHP <= 0)
         {    
             Death();
         }

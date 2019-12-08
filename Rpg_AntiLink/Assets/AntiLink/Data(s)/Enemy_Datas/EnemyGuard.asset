@@ -17,7 +17,7 @@ MonoBehaviour:
   m_RotationSpeed: 5
   m_Target: {fileID: 8168617579004924892, guid: 8ec6360f82708034dbc75a3a60aeddba,
     type: 3}
-  m_MaxHp: 10
+  m_MaxHp: 50
   m_Armor: 10
   m_AttackDamage: 10
   m_AudioSFX: {fileID: 8300000, guid: a29bb8c7cd78cd043aa8620d86640c18, type: 3}
