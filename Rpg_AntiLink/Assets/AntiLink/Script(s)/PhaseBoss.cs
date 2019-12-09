@@ -60,15 +60,15 @@ public class PhaseBoss : EnemyBase
 
     private void ConditionsAbility()
     {
-        if (m_MaxHp < 150 && m_MaxHp > 100)
+        if (m_CurrentHp < 150 && m_CurrentHp > 100)
         {
             Teleport();
         }
-        if (m_MaxHp < 80 && m_MaxHp > 30)
+        if (m_CurrentHp < 80 && m_CurrentHp > 30)
         {
             HealingSelf();
         }
-        else if (m_MaxHp > 1 && m_MaxHp < 20)
+        else if (m_CurrentHp > 1 && m_CurrentHp < 20)
         {
             m_CanRage = true;
             RageInvinsible();
@@ -94,7 +94,7 @@ public class PhaseBoss : EnemyBase
 
         if (m_CountHealing < 2)
         {
-            m_MaxHp += 50;
+            m_CurrentHp += 50;
             m_CountHealing++;
         }
     }
@@ -105,7 +105,7 @@ public class PhaseBoss : EnemyBase
 
         if (m_TimeModeRage > 0)
         {
-            m_MaxHp = 10000;
+            m_CurrentHp = 10000;
             m_Speed = 1.2f;
             m_AttackDamage = 20;
         }
@@ -115,7 +115,7 @@ public class PhaseBoss : EnemyBase
     {
         Debug.Log("WeakBoss Fonction");
 
-        m_MaxHp = 1;
+        m_CurrentHp = 1;
         m_Speed = 0.6f;
         m_AttackDamage = 5;
         m_CountRage++;

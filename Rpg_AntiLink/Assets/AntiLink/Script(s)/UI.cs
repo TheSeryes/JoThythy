@@ -8,7 +8,7 @@ public class UI : MonoBehaviour
     [SerializeField]
     private Image m_HpEnemy;
 
-
+    
     private void Start()
     {
         m_HpEnemy.fillAmount = 1f;
@@ -16,6 +16,6 @@ public class UI : MonoBehaviour
 
     public void UpdateHp(float aHp)
     {
-        m_HpEnemy.fillAmount = aHp;       
+        m_HpEnemy.fillAmount = aHp;           
     }
 }
