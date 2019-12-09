@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     #region Variable(s)
     [SerializeField]
     private Canvas m_Inventory;
+    [SerializeField]
+    private UI m_UIHpPlayer;
 
     [Header("Component(s)")]
     [SerializeField]
@@ -43,7 +45,6 @@ public class PlayerController : MonoBehaviour
     private int m_CurrentHealth;
     private AudioClip m_WalkSFX;
 
-    
 
     #endregion
 
