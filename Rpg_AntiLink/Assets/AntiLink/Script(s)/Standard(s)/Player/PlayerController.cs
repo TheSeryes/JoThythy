@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
     private int m_SwordDamage;
     private eAttackMode m_attackMode;
     private int m_ArrowAmount = 10;
+    public int ArrowAmount
+    {
+        get { return m_ArrowAmount; }
+    }
     [SerializeField]
     private LayerMask m_EnnemiLayer;
 
