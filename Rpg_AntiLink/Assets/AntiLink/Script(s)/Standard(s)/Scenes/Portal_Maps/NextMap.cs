@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NextMap : MonoBehaviour
 {
+    [DrawSO]
     [SerializeField]
     private SceneData m_SceneData;
 

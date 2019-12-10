@@ -241,3 +241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Data: {fileID: 11400000, guid: 0ce96bd21c70e294180b29b542d7a953, type: 2}
   m_EnemyGFX: {fileID: 7606204925366660507}
+  m_UI: {fileID: 0}
+  m_layer:
+    serializedVersion: 2
+    m_Bits: 512
+  aDegat: 20

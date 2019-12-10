@@ -19,5 +19,6 @@ MonoBehaviour:
     type: 3}
   m_MaxHp: 200
   m_Armor: 10
-  m_AttackDamage: 15
+  m_AttackDamage: 25
   m_AudioSFX: {fileID: 8300000, guid: a29bb8c7cd78cd043aa8620d86640c18, type: 3}
+  m_ListLootItems: []

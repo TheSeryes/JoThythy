@@ -38,10 +38,12 @@ public class DrawSOAttributeDrawer : PropertyDrawer
                     Rect propRect = position;
                     while (props.NextVisible(true))
                     {
+                        
                         if (props.name == "m_Script")
                         {
                             continue;
                         }
+                        
                         m_PropertyCount++;
                         propRect.y += EditorGUIUtility.singleLineHeight;
                         EditorGUI.PropertyField(propRect, props, true);
