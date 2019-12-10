@@ -39,13 +39,10 @@ public class EnemyBase : MonoBehaviour
 
     protected void Death()
     {
-        for(int i = 0; i < m_ListLootItems.Count;i++)
-        {
-            int index = Random.Range(0, m_ListLootItems.Count);
+        int index = Random.Range(0, m_ListLootItems.Count);
             
-            Instantiate(m_ListLootItems[index], transform.position,Quaternion.identity);
-        }
-
+        Instantiate(m_ListLootItems[index], transform.position,Quaternion.identity);
+        
         Destroy(gameObject);
     }
 

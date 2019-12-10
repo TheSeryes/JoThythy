@@ -23,6 +23,7 @@ public class Bird : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.Bird = this;
         m_Target = GameManager.Instance.GetPlayerPosition();
     }
          
@@ -42,18 +43,18 @@ public class Bird : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D aCol)
     {
-        Debug.Log("Enter HEre");
         BaseItems refCollec = aCol.gameObject.GetComponent<BaseItems>();
-
         if(refCollec != null)
         {
             m_GoToLoot = true;
             m_TargetLoot = aCol.transform;
-            Debug.Log(m_GoToLoot + " Value Bool");   
         }
-        else
+       
+        arrow refArrow = aCol.gameObject.GetComponent<arrow>();
+        if(refArrow != null)
         {
-            
+            m_GoToLoot = true;
+            m_TargetLoot = aCol.transform;
         }
     }
 }

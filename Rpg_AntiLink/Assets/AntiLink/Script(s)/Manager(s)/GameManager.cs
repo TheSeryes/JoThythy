@@ -39,6 +39,13 @@ public class GameManager : Singleton<GameManager>
         get{  return m_Player; }
     }
 
+    private Bird m_Bird;  //The PlayerController on the actual Player Obj
+    public Bird Bird
+    {
+        get{  return m_Bird; }
+        set{m_Bird = value;}
+    }
+
     ///<summary> Return the actual transform of the player.
     /// Can be usefull to set a target to allies or ennemis </summary>
     public Transform GetPlayerPosition()

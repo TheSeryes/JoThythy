@@ -24,3 +24,4 @@ MonoBehaviour:
   m_ListLootItems:
   - {fileID: 7080423518762330956, guid: 60fd282828c511542a328b3b30e7cf2a, type: 3}
   - {fileID: 4293361227817766525, guid: dfa895e08f6f12347a1190f655bac0ef, type: 3}
+  - {fileID: 5471747829959375101, guid: 0566c6fd76973154fa8a8370ee4a64e3, type: 3}
