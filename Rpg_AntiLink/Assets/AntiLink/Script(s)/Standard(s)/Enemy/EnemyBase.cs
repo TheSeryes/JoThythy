@@ -43,6 +43,7 @@ public class EnemyBase : MonoBehaviour
             
         Instantiate(m_ListLootItems[index], transform.position,Quaternion.identity);
         
+
         Destroy(gameObject);
     }
 
