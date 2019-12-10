@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Projectile : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float m_LifeTime = 2.0f;
     private float m_CurrentTime = 0.0f;
+
+    [SerializeField]
+    private SpriteRenderer m_Renderer;
     
     private void OnEnable()
     {
@@ -32,9 +36,39 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void UpdateDir(Vector2 aDir)
+    public void UpdateDir(eMoveDir aDir)
     {
-        m_Rb.velocity = aDir * m_Speed;
+        Vector2 dir = new Vector2();
+        switch(aDir)
+        {
+            case eMoveDir.Down:
+            {
+                m_Renderer.flipY = false;
+                dir = Vector2.down;
+                break;
+            }
+            case eMoveDir.Up:
+            {
+                m_Renderer.flipY = true;
+                dir = Vector2.up;
+                break;
+            }
+            case eMoveDir.Right:
+            {
+                m_Renderer.flipY = false;
+                transform.Rotate(transform.forward * 90f);
+                dir = Vector2.right;
+                break;
+            }
+            case eMoveDir.Left:
+            {
+                m_Renderer.flipY = true;
+                transform.Rotate(transform.forward * 90f);
+                dir = Vector2.left;
+                break;
+            }
+        }
+        m_Rb.velocity = dir * m_Speed;
     }
 
     private void DisableArrow()

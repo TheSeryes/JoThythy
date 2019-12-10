@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameMapFive
   m_EditorClassIdentifier: 
   m_SceneObj: {fileID: 102900000, guid: 65969c7c0ab5fb74f82214fc219ca79a, type: 3}
-  m_SceneMusic: {fileID: 0}
+  m_SceneMusic: {fileID: 8300000, guid: f059d708e80e30c4cbd4fffe8deaa0d5, type: 3}
   m_MusicOption: 1
   m_ScenePool: {fileID: 11400000, guid: 85837f6f416a4544c9dfe7be54b63928, type: 2}
   m_PoolOption: 0

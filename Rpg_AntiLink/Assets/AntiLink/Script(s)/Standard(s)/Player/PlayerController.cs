@@ -31,8 +31,8 @@ public class PlayerController : MonoBehaviour
     private eMoveDir m_MoveDirection;
 
     [Header("Attack")]
-    private Vector2 m_AttackDir = new Vector2();
     private eAttackMode m_attackMode;
+    private int m_ArrowAmount;
 
     [Header("Prefab(s)")]
     [SerializeField]
@@ -93,7 +93,8 @@ public class PlayerController : MonoBehaviour
             {
                 case eAttackMode.Ranged:
                 {
-                    Shoot();
+                    if(m_ArrowAmount > 0)
+                        Shoot();
                     break;
                 }
                 case eAttackMode.Melee:
@@ -113,6 +114,19 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Press i");
             m_Inventory.enabled = true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            m_VisualController.UpdateBaseLook(eBaseLook.WithHat_Crossbow);
+            m_attackMode = eAttackMode.Ranged;
+            m_VisualController.UpdateDir(m_MoveDirection);
+        }
+        else if(Input.GetKeyDown(KeyCode.Q))
+        {
+            m_VisualController.UpdateBaseLook(eBaseLook.WithHat_Sword);
+            m_attackMode = eAttackMode.Melee;
+            m_VisualController.UpdateDir(m_MoveDirection);
         }
     }
 
@@ -141,22 +155,26 @@ public class PlayerController : MonoBehaviour
         {
             //AudioManager.Instance.Play2DSFX(m_WalkSFX,Vector2.zero,0.02f,1f,false);   Mettre un Meileur Song de Marche dans le Data !
             m_MoveDirection = eMoveDir.Right;
-            m_AttackDir = Vector2.right;
+            m_VisualController.SetAnimType(true);
         }
         else if(m_Horizontal < 0)
         {
             m_MoveDirection = eMoveDir.Left;
-            m_AttackDir = Vector2.left;
+            m_VisualController.SetAnimType(true);
         }
         else if(m_Vertical < 0)
         {
             m_MoveDirection = eMoveDir.Down;
-            m_AttackDir = Vector2.down;
+            m_VisualController.SetAnimType(true);
         }
         else if(m_Vertical > 0)
         {
             m_MoveDirection = eMoveDir.Up;
-            m_AttackDir = Vector2.up;
+            m_VisualController.SetAnimType(true);
+        }
+        else
+        {
+            m_VisualController.SetAnimType(false);
         }
 
         m_VisualController.UpdateDir(m_MoveDirection);
@@ -173,13 +191,15 @@ public class PlayerController : MonoBehaviour
     ///<summary> Get an arrow from the PoolManager and call is UpdateDir() to change is direction, the Projectile.cs script on the arrow do the rest </summary>
     private void Shoot()
     {
+        m_ArrowAmount--;
         Projectile arrow = PoolManager.Instance.AccesSpawnFromPool(m_ArrowPrefab.name, transform.position, Quaternion.identity).GetComponent<Projectile>();
-        arrow.UpdateDir(m_AttackDir);
+        arrow.UpdateDir(m_MoveDirection);
     }
 
     public void ReceiveDamage(int aDamage)
     {
         m_CurrentHealth -= aDamage;
+        m_UIHpPlayer.UpdateHp((float)m_CurrentHealth/(float)m_MaxHealth);
         if (m_CurrentHealth <= 0)
         {    
             Death();
@@ -194,6 +214,7 @@ public class PlayerController : MonoBehaviour
         {
             m_CurrentHealth = m_MaxHealth;
         }
+        m_UIHpPlayer.UpdateHp((float)m_CurrentHealth/(float)m_MaxHealth);
         Debug.Log("Reveice Heal : " + m_CurrentHealth);
     }
     #endregion
