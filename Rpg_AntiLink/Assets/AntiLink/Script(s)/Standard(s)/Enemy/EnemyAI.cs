@@ -24,8 +24,6 @@ public class EnemyAI : EnemyBase
 
     [SerializeField]
     private LayerMask m_layer;
-    [SerializeField]
-    private int aDegat;
 
 
     private void Start()
@@ -56,8 +54,11 @@ public class EnemyAI : EnemyBase
             m_Ray = Physics2D.CircleCast(transform.position, 1f, transform.up, 0f, m_layer);
             if (m_CurrentTime <= 0)
             {
-                m_Ray.transform.GetComponent<PlayerController>().ReceiveDamage(aDegat);
-                m_CurrentTime = m_TimerBetweenAttack;
+                if (m_Ray.transform.GetComponent<PlayerController>() != null)
+                {
+                    m_Ray.transform.GetComponent<PlayerController>().ReceiveDamage(m_AttackDamage);
+                    m_CurrentTime = m_TimerBetweenAttack;
+                }
             }
         }
 

@@ -145,7 +145,7 @@ public class LevelManager : Singleton<LevelManager>
                 }
             case eSceneMusic.KeepOldMusic:
                 {
-                    AudioManager.Instance.PlayMusic();
+
                     break;
                 }
         }
