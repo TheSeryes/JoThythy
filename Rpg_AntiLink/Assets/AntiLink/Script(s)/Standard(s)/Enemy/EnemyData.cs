@@ -27,7 +27,18 @@ public class EnemyData : ScriptableObject
     //Audio Enemy
     [SerializeField]
     private AudioClip m_AudioSFX;
+
+    //List de Loot
+    [SerializeField]
+    private List<GameObject> m_ListLootItems = new List<GameObject>();
    
+    #region Getter: Loot Items
+    public List<GameObject> GetLootItems()
+    {
+        return m_ListLootItems;
+    }
+    #endregion
+
 
     #region Getter: Audio
     public AudioClip GetAudioSFX()

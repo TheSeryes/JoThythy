@@ -20,12 +20,17 @@ public class EnemyBase : MonoBehaviour
 
     // Variables Audio SFX
     protected AudioClip m_AudioSFX;
+
+    // Variable List de loot by enemy
+    protected List<GameObject> m_ListLootItems;
+
+
+    private Random m_Random = new Random();
     
     virtual protected void Awake()
     {
         SetupData();
     }
-
 
     virtual public void DealDamage(int aDamage)
     {
@@ -34,6 +39,13 @@ public class EnemyBase : MonoBehaviour
 
     protected void Death()
     {
+        for(int i = 0; i < m_ListLootItems.Count;i++)
+        {
+            int index = Random.Range(0, m_ListLootItems.Count);
+            
+            Instantiate(m_ListLootItems[index], transform.position,Quaternion.identity);
+        }
+
         Destroy(gameObject);
     }
 
@@ -52,5 +64,9 @@ public class EnemyBase : MonoBehaviour
 
         //Set Variables Audio
         m_AudioSFX = m_Data.GetAudioSFX();
+
+        //Set Variable LootItems
+        m_ListLootItems = m_Data.GetLootItems();
+
     }
 }

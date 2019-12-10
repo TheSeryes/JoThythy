@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -587,67 +587,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 321969184}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &339639482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 339639484}
-  - component: {fileID: 339639483}
-  - component: {fileID: 339639485}
-  m_Layer: 0
-  m_Name: Potion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &339639483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339639482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6a79dad869107429cd19301ef1c6b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ItemsDatas: {fileID: 11400000, guid: 02a4d1597f1634f4b9c17965776fa760, type: 2}
---- !u!4 &339639484
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339639482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.06, y: -3.03, z: 0.13476562}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &339639485
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339639482}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.26
 --- !u!1 &340876870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3116,7 @@ RectTransform:
   m_Children:
   - {fileID: 269544777}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3353,16 +3292,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6851963735558954643, guid: 8ec6360f82708034dbc75a3a60aeddba,
-        type: 3}
-      propertyPath: m_Name
-      value: Hero
-      objectReference: {fileID: 0}
-    - target: {fileID: 6851963735558954643, guid: 8ec6360f82708034dbc75a3a60aeddba,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8168617579004924892, guid: 8ec6360f82708034dbc75a3a60aeddba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3416,6 +3345,16 @@ PrefabInstance:
     - target: {fileID: 8168617579004924892, guid: 8ec6360f82708034dbc75a3a60aeddba,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851963735558954643, guid: 8ec6360f82708034dbc75a3a60aeddba,
+        type: 3}
+      propertyPath: m_Name
+      value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851963735558954643, guid: 8ec6360f82708034dbc75a3a60aeddba,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5008654796700724511, guid: 8ec6360f82708034dbc75a3a60aeddba,
@@ -5069,11 +5008,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321969185}
     m_Modifications:
-    - target: {fileID: 1713764437025591268, guid: 02d966a545fb5f24aa57462b6199e875,
-        type: 3}
-      propertyPath: m_Name
-      value: HpEnemies
-      objectReference: {fileID: 0}
     - target: {fileID: 3898254298438157818, guid: 02d966a545fb5f24aa57462b6199e875,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5193,6 +5127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7092199
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713764437025591268, guid: 02d966a545fb5f24aa57462b6199e875,
+        type: 3}
+      propertyPath: m_Name
+      value: HpEnemies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d966a545fb5f24aa57462b6199e875, type: 3}
