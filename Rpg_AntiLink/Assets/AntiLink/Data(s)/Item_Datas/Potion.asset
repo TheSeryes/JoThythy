@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Potion
   m_EditorClassIdentifier: 
   m_NameItems: Potion
-  m_Sprite: {fileID: 21300008, guid: 287f7ff9ee795024e87346092c662507, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcfa62e7dc9f0c842a0cf9c43d002a36, type: 3}
   m_PotionHp: 10
   m_PotionSpeed: 0
