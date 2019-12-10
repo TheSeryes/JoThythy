@@ -22,7 +22,7 @@ TagManager:
   - NPCInteract
   - Portal
   - Hero_Portal
-  - ChasseLoot
+  - Lootable
   - Allie
   - Boss
   - Projectile
