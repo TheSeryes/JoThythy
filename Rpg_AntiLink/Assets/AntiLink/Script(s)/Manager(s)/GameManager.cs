@@ -8,7 +8,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameObject m_PlayerPrefab;  //The prefab of the player that we spawn when the game start
    
-
     private Vector2 m_SpawnPos_Base;
     public Vector2 SpawnPos_Base
     {
@@ -59,12 +58,29 @@ public class GameManager : Singleton<GameManager>
     private GameObject m_Canvas;
 
     private float m_CurrentTime = 5f;
+    private bool m_True = false;
 
 
 
     private void Start()
     {
         SpawnPlayer();
+    }
+
+    private void Update()
+    {
+        GameOver();
+        if(m_True)
+        {
+            m_CurrentTime -= Time.deltaTime;
+            if(m_CurrentTime <= 0)
+            {
+                SceneManager.LoadScene("GameMainMenu");
+                m_True = false;
+                m_Canvas.SetActive(false);
+            }
+        }
+
     }
 
     private void SpawnPlayer()
@@ -108,9 +124,13 @@ public class GameManager : Singleton<GameManager>
 
     private void GameOver()
     {
-        if(m_Player.GetIsDead == true)
+        if(m_Player.GetIsDead)
         {
-            m_Canvas.SetActive(true);
+            if(!m_Canvas.activeSelf)
+            {
+                m_Canvas.SetActive(true);
+                m_True = true;
+            }
         }
     }
 }

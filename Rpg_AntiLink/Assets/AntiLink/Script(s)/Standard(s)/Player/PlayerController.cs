@@ -295,6 +295,7 @@ public class PlayerController : MonoBehaviour
     private void Death()
     {
         m_IsDead = true;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }

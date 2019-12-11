@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 6148663490699473780}
   - component: {fileID: 8810522043449879530}
   m_Layer: 5
-  m_Name: GameOver 1
+  m_Name: CanvasHorreur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
