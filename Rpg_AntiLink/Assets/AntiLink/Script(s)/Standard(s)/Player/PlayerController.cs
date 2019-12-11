@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum eAttackMode { None, Ranged, Melee };
 
@@ -53,7 +54,18 @@ public class PlayerController : MonoBehaviour
     private int m_CurrentHealth;
     private AudioClip m_WalkSFX;
 
+
+    [SerializeField]
+    private GameObject m_Canvas;
+
     private bool m_HaveEquipement = false;
+    private float m_CurrentTime = 5f;
+
+    private bool m_IsDead = false;
+    public bool GetIsDead
+    {
+        get{return m_IsDead;}
+    }
 
 
     #endregion
@@ -68,6 +80,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CheckInputs();
+
+        if(m_IsDead)
+        {
+            m_CurrentTime -= Time.deltaTime;
+            if(m_CurrentTime <= 0)
+            {
+                SceneManager.LoadScene("GameMainMenu");
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -273,6 +294,7 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
+        m_IsDead = true;
         Destroy(gameObject);
     }
 }

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField]
     private GameObject m_PlayerPrefab;  //The prefab of the player that we spawn when the game start
+   
 
     private Vector2 m_SpawnPos_Base;
     public Vector2 SpawnPos_Base
@@ -53,6 +55,13 @@ public class GameManager : Singleton<GameManager>
         return m_Player.gameObject.transform;
     }
 
+    [SerializeField]
+    private GameObject m_Canvas;
+
+    private float m_CurrentTime = 5f;
+
+
+
     private void Start()
     {
         SpawnPlayer();
@@ -94,7 +103,14 @@ public class GameManager : Singleton<GameManager>
                 m_Player.gameObject.transform.position = m_SpawnPos_Right;
                 break;
             }
+        }        
+    }
+
+    private void GameOver()
+    {
+        if(m_Player.GetIsDead == true)
+        {
+            m_Canvas.SetActive(true);
         }
-        
     }
 }

@@ -267,6 +267,8 @@ MonoBehaviour:
   m_ArrowPrefab: {fileID: 219873773432023739, guid: 838da3d6fd5fc3e4c92417e0aea87334,
     type: 3}
   m_PlayerData: {fileID: 11400000, guid: d80f5c6eb254ecb4b82a3cfbed307775, type: 2}
+  m_Canvas: {fileID: 6385314806444134339, guid: f2f8a7b22cec7f14883ccf922204473b,
+    type: 3}
 --- !u!50 &830801459459025369
 Rigidbody2D:
   serializedVersion: 4
@@ -410,11 +412,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8168617579004924892}
     m_Modifications:
-    - target: {fileID: 5594404381793283849, guid: 8e698babf661b824eb3041c88919d48f,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 2276830552481477040, guid: 8e698babf661b824eb3041c88919d48f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -520,6 +517,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5594404381793283849, guid: 8e698babf661b824eb3041c88919d48f,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 7152460747341620528, guid: 8e698babf661b824eb3041c88919d48f,
         type: 3}
       propertyPath: m_IsActive
@@ -540,11 +542,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8168617579004924892}
     m_Modifications:
-    - target: {fileID: 1713764437025591268, guid: 02d966a545fb5f24aa57462b6199e875,
-        type: 3}
-      propertyPath: m_Name
-      value: HpPlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 3898254298438157818, guid: 02d966a545fb5f24aa57462b6199e875,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,22 +647,33 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3150194499183178893, guid: 02d966a545fb5f24aa57462b6199e875,
+    - target: {fileID: 1713764437025591268, guid: 02d966a545fb5f24aa57462b6199e875,
+        type: 3}
+      propertyPath: m_Name
+      value: HpPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078490684286191768, guid: 02d966a545fb5f24aa57462b6199e875,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3150194499183178893, guid: 02d966a545fb5f24aa57462b6199e875,
+    - target: {fileID: 1078490684286191768, guid: 02d966a545fb5f24aa57462b6199e875,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 1078490684286191768, guid: 02d966a545fb5f24aa57462b6199e875,
+    - target: {fileID: 2994544021756996301, guid: 02d966a545fb5f24aa57462b6199e875,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae33253a644b60c4e8d0afd8464e7a23,
+        type: 3}
+    - target: {fileID: 3150194499183178893, guid: 02d966a545fb5f24aa57462b6199e875,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1078490684286191768, guid: 02d966a545fb5f24aa57462b6199e875,
+    - target: {fileID: 3150194499183178893, guid: 02d966a545fb5f24aa57462b6199e875,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0.3
@@ -686,12 +694,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 54
       objectReference: {fileID: 0}
-    - target: {fileID: 2994544021756996301, guid: 02d966a545fb5f24aa57462b6199e875,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ae33253a644b60c4e8d0afd8464e7a23,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d966a545fb5f24aa57462b6199e875, type: 3}
 --- !u!224 &1896437119208317609 stripped
